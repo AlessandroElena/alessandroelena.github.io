@@ -4,19 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alessandro Elena | Data Analyst</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f9f9f9;
+      background-color: #f5f7fa;
       color: #333;
     }
     header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
       padding: 4rem 1rem;
-      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      background: linear-gradient(135deg, #0a66c2 0%, #6a11cb 100%);
       color: white;
+    }
+    header img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      object-fit: cover;
+      border: 3px solid white;
     }
     header h1 {
       font-size: 2.5rem;
@@ -24,7 +37,6 @@
     }
     header p {
       max-width: 600px;
-      margin: 0 auto;
       line-height: 1.6;
     }
     nav {
@@ -39,10 +51,14 @@
       text-decoration: none;
       color: #333;
       font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #0a66c2;
     }
     section {
       padding: 4rem 1rem;
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
     }
     h2 {
@@ -50,22 +66,51 @@
       margin-bottom: 2rem;
       color: #222;
     }
-    .project {
-      background: #fff;
-      border-radius: 10px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
     }
-    .project h3 {
+    .project, .service-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .project:hover, .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .project img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      transition: transform 0.3s;
+    }
+    .project img:hover {
+      transform: scale(1.05);
+    }
+    .project h3, .service-card h3 {
       margin-top: 0;
     }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
     .contact a {
-      display: block;
-      color: #2575fc;
+      display: inline-block;
+      color: #0a66c2;
       text-decoration: none;
-      margin-bottom: 0.5rem;
+      margin: 0.5rem 1rem 0 0;
       font-weight: 500;
+      transition: color 0.3s;
+    }
+    .contact a:hover {
+      color: #6a11cb;
     }
     footer {
       text-align: center;
@@ -74,15 +119,20 @@
       color: white;
       font-size: 0.9rem;
     }
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       header h1 {
         font-size: 2rem;
+      }
+      header img {
+        width: 120px;
+        height: 120px;
       }
     }
   </style>
 </head>
 <body>
   <header>
+    <img src=""C:\Users\Utente\Desktop\Personal\Foto CV.jpg"" alt="Alessandro Elena">
     <h1>👋 Hey, I’m Alessandro Elena</h1>
     <p>I’m a Data Analyst based in Australia. I turn messy datasets into clear stories and insights that help businesses make smarter decisions.<br><br>
     Skilled in <strong>Excel, Power BI, Tableau, MySQL, and Python</strong> — I create dashboards, reports, and data-driven solutions.<br><br>
@@ -97,36 +147,41 @@
 
   <section id="portfolio">
     <h2>Portfolio</h2>
-    <div class="project">
-      <h3>Tourism Trends in Vietnam</h3>
-      <p>Exploratory analysis of Vietnam’s tourism growth using Python and Power BI dashboards.</p>
-      <a href="https://github.com/AlessandroElena" target="_blank">View on GitHub →</a>
-    </div>
-    <div class="project">
-      <h3>Sales Forecast Dashboard</h3>
-      <p>Power BI project for tracking KPIs and predicting future sales trends.</p>
-    </div>
-    <div class="project">
-      <h3>Surfboard Production Optimization</h3>
-      <p>Business intelligence analysis improving production flow and efficiency.</p>
+    <div class="portfolio-grid">
+      <div class="project">
+        <img src="project1.jpg" alt="Tourism Trends in Vietnam">
+        <h3>Tourism Trends in Vietnam</h3>
+        <p>Exploratory analysis of Vietnam’s tourism growth using Python and Power BI dashboards.</p>
+        <a href="https://github.com/AlessandroElena" target="_blank">View on GitHub →</a>
+      </div>
+      <div class="project">
+        <img src="project2.jpg" alt="Sales Forecast Dashboard">
+        <h3>Sales Forecast Dashboard</h3>
+        <p>Power BI project for tracking KPIs and predicting future sales trends.</p>
+      </div>
+      <div class="project">
+        <img src="project3.jpg" alt="Surfboard Production Optimization">
+        <h3>Surfboard Production Optimization</h3>
+        <p>Business intelligence analysis improving production flow and efficiency.</p>
+      </div>
     </div>
   </section>
 
   <section id="services">
     <h2>Services</h2>
-    <ul>
-      <li>📊 Data analysis & reporting</li>
-      <li>📈 Dashboard creation (Power BI, Tableau, Excel)</li>
-      <li>🧠 Predictive modeling & trend analysis</li>
-      <li>💼 Business intelligence & performance optimization</li>
-    </ul>
+    <div class="services-grid">
+      <div class="service-card">📊 Data analysis & reporting</div>
+      <div class="service-card">📈 Dashboard creation (Power BI, Tableau, Excel)</div>
+      <div class="service-card">🧠 Predictive modeling & trend analysis</div>
+      <div class="service-card">💼 Business intelligence & performance optimization</div>
+    </div>
   </section>
 
   <section id="contact" class="contact">
     <h2>Contact</h2>
-    <a href="mailto:alessandro.elena01@gmail.com">📧 alessandro.elena01@gmail.com</a>
-    <a href="https://www.linkedin.com/in/alessandro-elena-7009b7225/" target="_blank">🔗 LinkedIn Profile</a>
-    <a href="https://github.com/AlessandroElena" target="_blank">💻 GitHub Profile</a>
+    <a href="mailto:alessandro.elena01@gmail.com">📧 Email</a>
+    <a href="https://www.linkedin.com/in/alessandro-elena-7009b7225/" target="_blank">🔗 LinkedIn</a>
+    <a href="https://github.com/AlessandroElena" target="_blank">💻 GitHub</a>
   </section>
 
   <footer>
